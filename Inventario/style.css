@@ -1,0 +1,232 @@
+@import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900);
+
+/*Formatear Pagina Web*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+/*Cuerpo Principal de nuestra Pagina Web*/
+body{
+    background-color: #5b6677;
+}
+
+.Contenedor{
+    width: 100%;
+    min-height: 100vh;
+}
+
+.Barra_Lateral{
+    position: relative;
+    width: 256px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 24px;
+    border-radius: 0px 30px 30px 0px;
+    gap: 10px;
+    transition: all 0.3s;
+}
+
+.Barra_Lateral .Perfil{
+    display: flex;
+    gap: 20px;
+    border-bottom: 2px solid #f6f6f6;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.Logo_Usuario{
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.Logo_Usuario img{
+    width: 100%;
+    object-fit: cover;
+}
+
+.Logo_Detalles .Titulo{
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 10px;   
+}
+
+.Menu{
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #f6f6f6;
+}
+
+.Menu .Titulo{
+    font-size: 12px;
+    font-weight: 500;
+    color: #757575;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.Menu ul li{
+    position: relative;
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+.Menu ul li a{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #757575;
+    text-decoration: none;
+    padding: 12px 8px;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.Menu ul li a:hover, .Menu ul il.Activo a{
+    color: #000;
+    background-color: #f6f6f6;
+}
+
+.Menu ul li .icon{
+    font-size: 20px;
+}
+
+.Menu ul li .arrow{
+    font-size: 12px;
+    transition: all 0.3s;
+}
+
+.Menu ul li.Activado .arrow{
+    transform: rotate(180deg);
+}
+
+.Menu ul li .Texto{
+    flex: 1;
+}
+
+.Menu .Sub_Menu{
+    display: none;
+    margin-left: 20px;
+    padding-left: 20px;
+    padding-top: 5px;
+    border-left: 1px solid #f6f6f6;
+}
+
+.Menu .Sub_Menu li a{
+    padding: 10px 8px;
+    font-size: 12px;
+}
+
+.Linea_Divisoria {
+    margin: 20px 0;
+    border-top: 2px solid #f6f6f6;
+}
+
+.Menu:not(:last-child){
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #f6f6f6;
+}
+
+.Menu_Boton{
+    position: absolute;
+    right: -14px;
+    top: 3.5%;
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    color: #757575;
+    border: 2px solid #f6f6f6;;
+}
+
+.Menu_Boton:hover i{
+    color: #000;
+}
+
+.Menu_Boton i{
+    transition: all 0.3s;
+}
+
+.Barra_Lateral.active{
+    width: 92px;
+    transition: all 0.3s;
+}
+
+.Barra_Lateral.active .Menu_Boton i{
+    transition: rotate(180deg);
+}
+
+.Barra_Lateral.active .Logo_Detalles{
+    display: none;
+}
+
+.Barra_Lateral.active .Menu .Titulo{
+    text-align: center;
+}
+
+.Barra_Lateral.active .Menu ul li .arrow{
+    display: none;
+}
+
+.Barra_Lateral.active .Menu > ul > li > a{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Barra_Lateral.active .Menu > ul > li > a .Texto{
+    position: absolute;
+    left: 70px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px;
+    border-radius: 4px;
+    color: #fff;
+    background-color: #000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+}
+
+.Barra_Lateral.active .Menu > ul > li > a .Texto::after{
+    content: "";
+    position: absolute;
+    left: -5px;
+    top: 20%;
+    height: 20px;
+    border-radius: 2px;
+    background-color: #000;
+    transform: rotate(45deg);
+   z-index: -1;
+}
+
+.Barra_Lateral.active .Menu > ul > li > a:hover .Texto{
+    left: 50px;
+    opacity: 1;
+    visibility: visible;
+}
+
+.Barra_Lateral.active .Menu .Sub_Menu{
+    position: absolute;
+    top: 0;
+    left: 20px;
+    width: 200px;
+    border-radius: 20px;
+    padding: 10px 20px;
+    border: 1px solid #f6f6f6;
+    background-color: #fff;
+    box-shadow: 0px 10px 8px rgba(0, 0, 0, 0.1);
+}
